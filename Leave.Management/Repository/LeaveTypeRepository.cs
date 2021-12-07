@@ -56,5 +56,11 @@ namespace Leave.Management.Repository
             _db.LeaveType.Update(entity);
             return Save();
         }
+
+        public bool isExists(int id)
+        {
+            var exists = _db.LeaveType.Any(x => x.Id == id);
+            return exists;
+        }
     }
 }
